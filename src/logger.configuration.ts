@@ -12,9 +12,42 @@ const traceFormat = format((info: TransformableInfo) => {
   return info;
 });
 
+
+const getLevel = () => {
+  let level = 'info';
+  switch (process.env.NODE_ENV) {
+    case "production":
+      level = "warning";
+      break;
+    case "test":
+      level = "emerg";
+      break;
+    default:
+      level = "debug";
+      break;
+  }
+  return level;
+}
+const getSilent = () => {
+  let silent = false;
+  switch (process.env.NODE_ENV) {
+    case "production":
+      silent = false;
+      break;
+    case "test":
+      silent = true;
+      break;
+    default:
+      silent = false;
+      break;
+  }
+  return silent;
+}
+
 const initLogger = (name: string, version: string): Logger => {
   const logger: Logger = createLogger({
-    level: 'info',
+    level: getLevel(),
+    silent: getSilent(),
     format: format.combine(traceFormat(), format.timestamp(), format.json()),
     defaultMeta: { service: name, version },
     transports: [new transports.Console()],

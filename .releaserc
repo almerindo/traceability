@@ -6,7 +6,7 @@
    "@semantic-release/changelog",
    "@semantic-release/git"
    ],
-  "branches": ["master", "next"],
+  "branches": ["main", "next"],
   "type": "git",
   "url": "git@github.com:almerindo/traceability.git"
 }

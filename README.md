@@ -2,6 +2,7 @@
 [![TypeScript version][ts-badge]][typescript-38]
 [![Node.js version][nodejs-badge]][nodejs]
 [![APLv2][license-badge]][LICENSE]
+[![Build Status](https://cloud.drone.io/api/badges/almerindo/traceability/status.svg)](https://cloud.drone.io/almerindo/traceability)
 
 
 
