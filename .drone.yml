@@ -1,0 +1,42 @@
+---
+  kind: pipeline
+  type: docker
+  name: default
+
+  steps:
+  - name: test
+    image: node:14.16.1
+    environment:
+      NPM_TOKEN:
+        from_secret: NPM_TOKEN
+    volumes:
+    - name: cache
+      path: /coverage
+    commands:
+      - yarn
+      - yarn build
+      - yarn test
+
+  - name: build-upload-npm
+    image: node:14.16.1
+    environment:
+      NPM_TOKEN:
+        from_secret: NPM_TOKEN
+      GITHUB_TOKEN:
+        from_secret: GITHUB_TOKEN
+    commands:
+      - npm set registry https://registry.npmjs.org/
+      - echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > .npmrc
+      - yarn
+      - yarn build
+      - yarn semantic-release
+    when:
+      branch:
+      - master
+      event:
+      - push
+
+  volumes:
+  - name: cache
+    temp: {}
+

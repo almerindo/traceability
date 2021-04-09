@@ -1,0 +1,51 @@
+{
+  "env": {
+    "es6": true,
+    "node": true,
+    "jest/globals": true
+  },
+  "extends": [
+    "airbnb-base",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:prettier/recommended",
+    "prettier/@typescript-eslint",
+    "plugin:jest/recommended"
+   ],
+  "globals": {
+    "Atomics": "readonly",
+    "SharedArrayBuffer": "readonly"
+  },
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": 2018,
+    "sourceType": "module"
+  },
+  "plugins": [
+    "prettier",
+    "@typescript-eslint",
+    "jest"
+  ],
+  "rules": {
+    "prettier/prettier": "error",
+    "import/extensions" : [
+      "error",
+      "ignorePackages",
+      {
+        "ts":"never"
+      }
+    ],
+    "jest/no-disabled-tests": "warn",
+    "jest/no-focused-tests": "error",
+    "jest/no-identical-title": "error",
+    "jest/prefer-to-have-length": "warn",
+    "jest/valid-expect": "error"
+
+  },
+  "settings": {
+    "import/resolver": {
+      "typescript": {}
+    }
+  }
+
+
+}
