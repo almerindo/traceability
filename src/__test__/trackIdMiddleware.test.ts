@@ -1,6 +1,6 @@
 /* eslint-disable no-console */
 
-import Logger from '../traceability/logger.configuration';
+import Logger from '../logger.configuration';
 
 const logger = Logger('testService', 'v1.1.1');
 
