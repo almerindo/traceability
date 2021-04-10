@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable @typescript-eslint/no-var-requires */
 /* eslint-disable no-console */
 /* eslint-disable class-methods-use-this */
@@ -9,7 +10,7 @@ export interface RequestContext {
   [key: string]: string | string[] | undefined;
 }
 
-class ContextAsyncHooks {
+export class ContextAsyncHooks {
   private store = new Map();
 
   private idSeq = 0;

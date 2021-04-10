@@ -20,7 +20,7 @@
     "type": "git",
     "url": "git@github.com:almerindo/traceability.git"
   },
-  "main": "./dist/traceability/index.js",
+  "main": "./dist/index.js",
   "directories": {
     "doc": "doc"
   },
