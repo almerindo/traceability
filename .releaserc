@@ -17,8 +17,7 @@
         "message": "Release <%= nextRelease.version %> [skip ci]",
         "assets": [
           "package.json",
-          "CHANGELOG.md",
-          "index.js"
+          "CHANGELOG.md"
         ]
       }
     ]

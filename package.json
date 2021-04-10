@@ -62,7 +62,6 @@
   "scripts": {
     "clean": "rimraf coverage dist tmp",
     "build": "tsc",
-    "postbuild": "cp package.json dist",
     "prepare": "yarn lint ; yarn build ",
     "test": "jest --runInBand --detectOpenHandles --no-cache ---coverage",
     "lint": "eslint . --ext .ts,.tsx"
