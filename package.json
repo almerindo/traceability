@@ -1,7 +1,7 @@
 {
   "name": "traceability",
   "license": "MIT",
-  "version": "1.0.0",
+  "version": "nextRelease.version",
   "bugs": {
     "url": "https://github.com/almerindo/traceability/issues"
   },
