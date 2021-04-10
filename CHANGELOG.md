@@ -1,3 +1,11 @@
+## [1.1.6](https://github.com/almerindo/traceability/compare/v1.1.5...v1.1.6) (2021-04-10)
+
+
+### Bug Fixes
+
+* some erros on ci and package npm ([0d27289](https://github.com/almerindo/traceability/commit/0d27289db82c7235eebf3919a1413e16352b2510))
+* some erros on ci and package npm ([2dd6122](https://github.com/almerindo/traceability/commit/2dd61226f96d60c8e6cc52231afbe49f609c0e13))
+
 ## [1.1.5](https://github.com/almerindo/traceability/compare/v1.1.4...v1.1.5) (2021-04-10)
 
 
