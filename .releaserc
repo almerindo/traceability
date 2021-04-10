@@ -1,5 +1,4 @@
 {
-  "pkgRoot": "dist",
   "tarballDir": "./doc",
   "plugins": [
     "@semantic-release/commit-analyzer",
