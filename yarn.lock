@@ -2066,6 +2066,11 @@ combined-stream@^1.0.6, combined-stream@~1.0.6:
   dependencies:
     delayed-stream "~1.0.0"
 
+commander@^2.19.0:
+  version "2.20.3"
+  resolved "https://registry.yarnpkg.com/commander/-/commander-2.20.3.tgz#fd485e84c03eb4881c20722ba48035e8531aeb33"
+  integrity sha512-GpVkmM8vF2vQUkj2LvZmD35JxeJOLCwJ9cUkugyk2nuhbv3+mJvpLYYt+0+USMxE+oj+ey/lJEnhZw75x/OMcQ==
+
 common-ancestor-path@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/common-ancestor-path/-/common-ancestor-path-1.0.1.tgz#4f7d2d1394d91b7abdf51871c62f71eadb0182a7"
@@ -4589,6 +4594,15 @@ json5@^1.0.1:
   dependencies:
     minimist "^1.2.0"
 
+jsonfile@^5.0.0:
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/jsonfile/-/jsonfile-5.0.0.tgz#e6b718f73da420d612823996fdf14a03f6ff6922"
+  integrity sha512-NQRZ5CRo74MhMMC3/3r5g2k4fjodJ/wh8MxjFbCViWKFjxrnudWSY5vomh+23ZaXzAS7J3fBZIR2dV6WbmfM0w==
+  dependencies:
+    universalify "^0.1.2"
+  optionalDependencies:
+    graceful-fs "^4.1.6"
+
 jsonfile@^6.0.1:
   version "6.1.0"
   resolved "https://registry.yarnpkg.com/jsonfile/-/jsonfile-6.1.0.tgz#bc55b2634793c679ec6403094eb13698a6ec0aae"
@@ -6353,6 +6367,15 @@ repeating@^2.0.0:
   dependencies:
     is-finite "^1.0.0"
 
+replace-json-property@^1.6.3:
+  version "1.6.3"
+  resolved "https://registry.yarnpkg.com/replace-json-property/-/replace-json-property-1.6.3.tgz#8bac0d4ea1695ef8571e76b87c5609a2c32d8b35"
+  integrity sha512-i4p43kXJaZyP6UUzsNKahpwo0eQRqxcpOm1GMaTAyJUyfh44T7xRO1IUt/p45PYmnl7CjD36ME6OY45vGaQHAw==
+  dependencies:
+    chalk "^4.1.0"
+    commander "^2.19.0"
+    jsonfile "^5.0.0"
+
 request-promise-core@1.1.4:
   version "1.1.4"
   resolved "https://registry.yarnpkg.com/request-promise-core/-/request-promise-core-1.1.4.tgz#3eedd4223208d419867b78ce815167d10593a22f"
@@ -7541,6 +7564,11 @@ universal-user-agent@^6.0.0:
   version "6.0.0"
   resolved "https://registry.yarnpkg.com/universal-user-agent/-/universal-user-agent-6.0.0.tgz#3381f8503b251c0d9cd21bc1de939ec9df5480ee"
   integrity sha512-isyNax3wXoKaulPDZWHQqbmIx1k2tb9fb3GGDBRxCscfYV2Ch7WxPArBsFEG8s/safwXTT7H4QGhaIkTp9447w==
+
+universalify@^0.1.2:
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/universalify/-/universalify-0.1.2.tgz#b646f69be3942dabcecc9d6639c80dc105efaa66"
+  integrity sha512-rBJeI5CXAlmy1pV+617WB9J63U6XcazHHF2f2dbJix4XzpUF0RS3Zbj0FGIOCAva5P/d/GBOYaACQ1w+0azUkg==
 
 universalify@^2.0.0:
   version "2.0.0"
