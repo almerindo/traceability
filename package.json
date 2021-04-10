@@ -14,7 +14,12 @@
     "logger",
     "winston",
     "trackId",
-    "correlation id"
+    "correlation id",
+    "winston",
+    "AsyncLocalStorage",
+    "async-hooks",
+    "context",
+    "express"
   ],
   "repository": {
     "type": "git",

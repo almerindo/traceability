@@ -23,7 +23,7 @@ export class ContextAsyncHooks {
     this.asyncLocalStorage = new AsyncLocalStorage<any>();
   }
 
-  public getExpressMiddlewareTracking(): Function {
+  public getExpressMiddlewareTracking(): any {
     return (request: Request, response: Response, next: NextFunction): void => {
       const { trackId } = this.getTrackId(request.headers);
       this.setContext({ trackId });
