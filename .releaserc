@@ -10,12 +10,7 @@
         "npmPublish": false
       }
     ],
-    [
-      "@semantic-release/exec",
-      {
-        "prepareCmd": "npx rjp package.json version nextRelease.version"
-      }
-    ],
+
     "@semantic-release/changelog",
     [
       "@semantic-release/git",
@@ -23,7 +18,8 @@
         "message": "Release <%= nextRelease.version %> [skip ci]",
         "assets": [
           "package.json",
-          "CHANGELOG.md"
+          "CHANGELOG.md",
+          "index.js"
         ]
       }
     ]
