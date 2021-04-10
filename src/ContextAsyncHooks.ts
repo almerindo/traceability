@@ -2,12 +2,7 @@
 /* eslint-disable no-console */
 /* eslint-disable class-methods-use-this */
 import { NextFunction, Request, Response } from 'express';
-
 import { v4 } from 'uuid';
-
-import fs from 'fs';
-import util from 'util';
-
 import { AsyncLocalStorage } from 'async_hooks';
 
 export interface RequestContext {
@@ -21,7 +16,7 @@ class ContextAsyncHooks {
 
   private static instance: ContextAsyncHooks;
 
-  asyncLocalStorage: any;
+  asyncLocalStorage: AsyncLocalStorage<any>;
 
   constructor() {
     this.asyncLocalStorage = new AsyncLocalStorage<any>();

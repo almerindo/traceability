@@ -27,12 +27,10 @@
     commands:
       - npm set registry https://registry.npmjs.org/
       - echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > .npmrc
-      - yarn
-      - yarn build
       - yarn semantic-release
     when:
       branch:
-      - master
+      - main
       event:
       - push
 
