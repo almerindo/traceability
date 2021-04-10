@@ -1,6 +1,6 @@
 {
   "pkgRoot": "dist",
-  "tarballDir": "./",
+  "tarballDir": "./doc",
   "plugins": [
     "@semantic-release/commit-analyzer",
     "@semantic-release/release-notes-generator",
