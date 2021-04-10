@@ -2,6 +2,8 @@ module.exports = {
 
   collectCoverage: true,
   coverageDirectory: "coverage",
+  runInBand: true,
+
 
   // An array of file extensions your modules use
   moduleFileExtensions: [

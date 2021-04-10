@@ -8,7 +8,13 @@
 
 # Use
 ```js
-import traceability from 'traceability';
+import ContextAsyncHooks from 'traceability';
+
+const context = ContextAsyncHooks.getInstance();
+context.createRequestContext({ trackId: '1234567890' });
+const data = context.getRequestContext();
+
+console.info(data);
 ```
 
 ## License
