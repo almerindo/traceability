@@ -3,16 +3,19 @@
 import { createLogger, format, Logger, transports } from 'winston';
 
 import { TransformableInfo } from 'logform';
+import dotenv from 'dotenv';
 import ContextAsyncHooks from './ContextAsyncHooks';
+
+dotenv.config();
 
 class LoggerTraceability {
   private static instance: LoggerTraceability;
 
   private logger: Logger;
 
-  public static level = 'info';
+  private LEVEL = 'info';
 
-  public static silent = false;
+  private SILENT = false;
 
   private traceFormat = format((info: TransformableInfo) => {
     const requestInfo = ContextAsyncHooks.getContext();
@@ -25,8 +28,8 @@ class LoggerTraceability {
   private constructor() {
     const { serviceName, version } = process.env;
     this.logger = createLogger({
-      level: LoggerTraceability.level,
-      silent: LoggerTraceability.silent,
+      level: this.LEVEL,
+      silent: this.SILENT,
       format: format.combine(
         this.traceFormat(),
         format.timestamp(),

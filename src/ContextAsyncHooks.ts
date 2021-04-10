@@ -1,12 +1,14 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 /* eslint-disable no-console */
 /* eslint-disable class-methods-use-this */
-import * as asyncHooks from 'async_hooks';
 import { NextFunction, Request, Response } from 'express';
 
 import { v4 } from 'uuid';
 
 import fs from 'fs';
 import util from 'util';
+
+import { AsyncLocalStorage } from 'async_hooks';
 
 export interface RequestContext {
   [key: string]: string | string[] | undefined;
@@ -15,49 +17,14 @@ export interface RequestContext {
 class ContextAsyncHooks {
   private store = new Map();
 
+  private idSeq = 0;
+
   private static instance: ContextAsyncHooks;
 
-  private contextPropagationHook: asyncHooks.AsyncHook = asyncHooks.createHook({
-    init: (asyncId: number, type: string, triggerAsyncId: number) => {
-      if (this.store.has(triggerAsyncId)) {
-        const data = this.store.get(triggerAsyncId);
-        const tam = this.store.size;
-        fs.writeFileSync(
-          'init.out',
-          `${util.format(
-            'init asyncId',
-            `asyncId : ${asyncId}`,
-            `triggerAsyncId: ${triggerAsyncId}`,
-            data,
-            tam,
-          )}\n`,
-          { flag: 'a' },
-        );
-        this.store.set(asyncId, data);
-      }
-    },
-    destroy: (asyncId: number) => {
-      if (this.store.has(asyncId)) {
-        const data = this.store.get(asyncId);
-        const tam = this.store.size;
+  asyncLocalStorage: any;
 
-        fs.writeFileSync(
-          'init.out',
-          `${util.format(
-            'delete asyncId',
-            `asyncId : ${asyncId}`,
-            data,
-            tam,
-          )}\n`,
-          { flag: 'a' },
-        );
-        this.store.delete(asyncId);
-      }
-    },
-  });
-
-  private constructor() {
-    this.contextPropagationHook.enable();
+  constructor() {
+    this.asyncLocalStorage = new AsyncLocalStorage<any>();
   }
 
   public getExpressMiddlewareTracking(): Function {
@@ -72,7 +39,7 @@ class ContextAsyncHooks {
   public setContext(data: RequestContext): void {
     let oldData = this.getContext();
     oldData = { ...oldData, ...data };
-    this.store.set(asyncHooks.executionAsyncId(), oldData);
+    this.asyncLocalStorage.enterWith(oldData);
   }
 
   public getTrackId(data: RequestContext): RequestContext {
@@ -88,8 +55,8 @@ class ContextAsyncHooks {
     return requestInfo;
   }
 
-  public getContext(): RequestContext {
-    return this.store.get(asyncHooks.executionAsyncId());
+  public getContext(): RequestContext | undefined {
+    return this.asyncLocalStorage.getStore();
   }
 
   public static getInstance(): ContextAsyncHooks {

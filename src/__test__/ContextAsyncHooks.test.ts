@@ -1,35 +1,46 @@
 /* eslint-disable no-console */
 
 import ContextAsyncHooks from '../ContextAsyncHooks';
+import Logger from '../LoggerTraceability';
 
 describe('AsyncHooks Context', () => {
-  ContextAsyncHooks.setContext({ trackId: '1234567890', teste: 'alm' });
-
-  it('Should get trackId on context', () => {
+  ContextAsyncHooks.setContext({ trackId: '1234567890', parent: 'alm' });
+  ContextAsyncHooks.setContext({
+    userId: '1111111111',
+  });
+  it('Should get all payload on parent promisse context', () => {
     const data = ContextAsyncHooks.getContext();
+
+    expect(data).toHaveProperty('trackId');
+    if (data) {
+      expect(data.trackId).toBe('1234567890');
+      expect(data.parent).toBe('alm');
+      expect(data.userId).toBe('1111111111');
+    }
+  });
+
+  it('Should creates a context only assesible in this sub task', async () => {
     ContextAsyncHooks.setContext({
-      userId: '1111111111',
+      parent: 'child',
     });
-
-    expect(data).toHaveProperty('trackId');
-    expect(data.trackId).toBe('1234567890');
-  });
-
-  it('Should set data on context and return data + trackId', async () => {
     const data = ContextAsyncHooks.getContext();
 
     expect(data).toHaveProperty('trackId');
-    expect(data.trackId).toBe('1234567890');
-    expect(data.userId).toBe('1111111111');
-    expect(data.teste).toBe('alm');
+    if (data) {
+      expect(data.trackId).toBe('1234567890');
+      expect(data.userId).toBe('1111111111');
+      expect(data.parent).toBe('child');
+    }
   });
 
-  it('Should log trackId', async () => {
+  it('Should get all context, after the child context has been modified', () => {
     const data = ContextAsyncHooks.getContext();
-
-    expect(data).toHaveProperty('trackId');
-    expect(data.trackId).toBe('1234567890');
-    expect(data.userId).toBe('1111111111');
-    expect(data.teste).toBe('alm');
+    Logger.info('message', { data });
+    if (data) {
+      expect(data).toHaveProperty('trackId');
+      expect(data.trackId).toBe('1234567890');
+      expect(data.userId).toBe('1111111111');
+      expect(data.parent).toBe('alm');
+    }
   });
 });

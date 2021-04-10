@@ -1,12 +1,30 @@
 {
+  "pkgRoot": "dist",
   "plugins": [
-   "@semantic-release/commit-analyzer",
-   "@semantic-release/release-notes-generator",
-   ["@semantic-release/npm",{"npmPublish":true}],
-   "@semantic-release/changelog",
-   "@semantic-release/git"
-   ],
-  "branches": ["main", "next"],
+    "@semantic-release/commit-analyzer",
+    "@semantic-release/release-notes-generator",
+    [
+      "@semantic-release/npm",
+      {
+        "npmPublish": true
+      }
+    ],
+    "@semantic-release/changelog",
+    [
+      "@semantic-release/git",
+      {
+        "message": "Release <%= nextRelease.version %> [skip ci]",
+        "assets": [
+          "package.json",
+          "CHANGELOG.md"
+        ]
+      }
+    ]
+  ],
+  "branches": [
+    "main",
+    "next"
+  ],
   "type": "git",
   "url": "git@github.com:almerindo/traceability.git"
 }
