@@ -1,3 +1,10 @@
+## [1.1.9](https://github.com/almerindo/traceability/compare/v1.1.8...v1.1.9) (2021-04-10)
+
+
+### Bug Fixes
+
+* fixes express middleware and improves the readme.md ([eb9ec4c](https://github.com/almerindo/traceability/commit/eb9ec4c99ffd32b3212d7302d81a878c7e88e021))
+
 ## [1.1.8](https://github.com/almerindo/traceability/compare/v1.1.7...v1.1.8) (2021-04-10)
 
 
