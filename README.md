@@ -23,7 +23,7 @@ npm install traceability
 
 # Example Code
 
-## Logging the trackId in all method
+## Logging the trackId in all methods
 > **File:** index.js
 ```js
 import traceability from 'traceability'
@@ -118,6 +118,42 @@ Hello World!%
 ```
 ---
 > **NOTE:** At the momennt, we can compare the trackId values printed onn server side and on client side.
+
+## Using as a Nest middleware - Global Middleware
+
+First of all, follow the First Steps accessing the link [NESTJS Oficial Docs](https://docs.nestjs.com/first-steps). After that, just modify the `main.ts` file as described bellow.
+
+> **File** main.ts (see examples directory)
+```js
+import { NestFactory } from '@nestjs/core';
+import { AppModule } from './app.module';
+import traceability from 'traceability';
+
+const middlewareTracking = traceability.ContextAsyncHooks.getExpressMiddlewareTracking();
+
+async function bootstrap() {
+  const app = await NestFactory.create(AppModule);
+  app.use(middlewareTracking);
+  await app.listen(3000);
+}
+bootstrap();
+```
+
+# Known issues
+
+ ## TypeError: async_hooks_1.AsyncLocalStorage is not a constructor:
+ ```
+ this.asyncLocalStorage = new async_hooks_1.AsyncLocalStorage();
+
+ TypeError: async_hooks_1.AsyncLocalStorage is not a constructor
+    at new ContextAsyncHooks
+
+```
+> This lib uses LocalStorageAsyncHooks as a feature that is only available on Node >= 14.0.0
+>
+> Then, to solve it,  you must migrates your node to 14.0.0. Type: nvm use 14.16.1
+
+
 ## License
  See the [LICENSE](https://raw.githubusercontent.com/almerindo/traceability/main/LICENSE) file for details.
 
