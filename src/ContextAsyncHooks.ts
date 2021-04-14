@@ -11,10 +11,6 @@ export interface RequestContext {
 }
 
 export class ContextAsyncHooks {
-  private store = new Map();
-
-  private idSeq = 0;
-
   private static instance: ContextAsyncHooks;
 
   asyncLocalStorage: AsyncLocalStorage<any>;
