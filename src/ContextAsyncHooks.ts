@@ -13,7 +13,7 @@ export interface RequestContext {
 export class ContextAsyncHooks {
   private static instance: ContextAsyncHooks;
 
-  asyncLocalStorage: AsyncLocalStorage<any>;
+  public asyncLocalStorage: AsyncLocalStorage<any>;
 
   constructor() {
     this.asyncLocalStorage = new AsyncLocalStorage<any>();
