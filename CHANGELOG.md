@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/almerindo/traceability/compare/v1.2.0...v1.3.0) (2021-04-14)
+
+
+### Features
+
+* change asyncLocalStorage to public ([a754473](https://github.com/almerindo/traceability/commit/a7544735332631918a954e9ccedc8f036f35e269))
+
 # [1.2.0](https://github.com/almerindo/traceability/compare/v1.1.9...v1.2.0) (2021-04-12)
 
 
