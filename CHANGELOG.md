@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/almerindo/traceability/compare/v1.1.9...v1.2.0) (2021-04-12)
+
+
+### Features
+
+* add example and middleware to NestJs ([bc0a5ee](https://github.com/almerindo/traceability/commit/bc0a5eefdba89e2d35cf79a8976dee436f31a150))
+
 ## [1.1.9](https://github.com/almerindo/traceability/compare/v1.1.8...v1.1.9) (2021-04-10)
 
 
