@@ -1,10 +1,17 @@
+/* eslint-disable @typescript-eslint/explicit-function-return-type */
+/* eslint-disable func-names */
+/* eslint-disable no-restricted-syntax */
+/* eslint-disable @typescript-eslint/no-this-alias */
+/* eslint-disable no-underscore-dangle */
+/* eslint-disable no-param-reassign */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable @typescript-eslint/no-var-requires */
 /* eslint-disable no-console */
 /* eslint-disable class-methods-use-this */
 import { NextFunction, Request, Response } from 'express';
 import { v4 } from 'uuid';
-import { AsyncLocalStorage } from 'async_hooks';
+import { AsyncLocalStorage, AsyncResource } from 'async_hooks';
+import plugin from './mongoose.plugin';
 
 export interface RequestContext {
   [key: string]: string | string[] | undefined;
@@ -17,6 +24,10 @@ export class ContextAsyncHooks {
 
   constructor() {
     this.asyncLocalStorage = new AsyncLocalStorage<any>();
+  }
+
+  public getMongoosePlugin(): any {
+    return plugin;
   }
 
   public getExpressMiddlewareTracking(): any {
@@ -34,7 +45,7 @@ export class ContextAsyncHooks {
     this.asyncLocalStorage.enterWith(oldData);
   }
 
-  public getTrackId(data: RequestContext): RequestContext {
+  public getTrackId(data: RequestContext | undefined | null): RequestContext {
     let requestInfo;
     if (!data) {
       requestInfo = { trackId: v4() };
