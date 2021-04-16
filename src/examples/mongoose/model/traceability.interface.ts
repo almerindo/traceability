@@ -11,6 +11,4 @@ export interface ITraceability {
 }
 export interface MTraceability extends ITraceability, mongoose.Document {
   context: any;
-  create(doc: any): any;
-  setContext(context: any): void;
 }

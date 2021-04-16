@@ -7,11 +7,11 @@
 /* eslint-disable import/prefer-default-export */
 import mongoose from 'mongoose';
 import { MTraceability } from '../model/traceability.interface';
-import Traceability from '../../../index';
+// import Traceability from '../../../index';
 
 import plugin from '../../../mongoose.plugin';
 
-const { Logger, ContextAsyncHooks } = Traceability;
+// const { Logger, ContextAsyncHooks } = Traceability;
 
 const TraceabilitySchema = new mongoose.Schema<MTraceability>(
   {
@@ -46,9 +46,14 @@ const TraceabilitySchema = new mongoose.Schema<MTraceability>(
 
 TraceabilitySchema.method('setContext', function (context) {
   this.context = context;
-  ContextAsyncHooks.setContext(context);
-  Logger.info('PEGOU O CONTEXTO? ');
+  // ContextAsyncHooks.setContext(context);
+  console.info('PEGOU O CONTEXTO? ');
 });
-Logger.info('teest');
-TraceabilitySchema.plugin(plugin, Traceability.ContextAsyncHooks);
+// TraceabilitySchema.method('cria', function (data) {
+//   this.context = data;
+//   this.create(data);
+//   Logger.info('CRIOU? ');
+// });
+console.info('teest');
+// TraceabilitySchema.plugin(plugin, Traceability.ContextAsyncHooks);
 export default TraceabilitySchema;
