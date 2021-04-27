@@ -70,6 +70,7 @@
     "build": "tsc",
     "prepare": "yarn lint ; yarn build ",
     "test": "jest --runInBand --detectOpenHandles --no-cache ---coverage",
-    "lint": "eslint . --ext .ts,.tsx"
+    "lint": "eslint . --ext .ts,.tsx",
+    "example:mongoose": "ts-node ./src/examples/mongoose/mongoose.example.ts"
   }
 }
