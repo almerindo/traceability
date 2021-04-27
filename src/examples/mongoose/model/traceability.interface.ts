@@ -9,6 +9,4 @@ export interface ITraceability {
   updated_at?: Date | null;
   deleted_at?: Date | null;
 }
-export interface MTraceability extends ITraceability, mongoose.Document {
-  context: any;
-}
+export interface MTraceability extends ITraceability, mongoose.Document {}

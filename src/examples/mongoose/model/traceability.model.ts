@@ -10,5 +10,3 @@ export const TraceabilityModel = dbPool
   .getConnection('test')
   ?.model<MTraceability>('Traceability', TraceabilitySchema);
 
-// const M = mongoose.model<MTraceability>('Traceability', TraceabilitySchema);
-// export const TraceabilityModel = new M();

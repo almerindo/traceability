@@ -10,7 +10,7 @@ const configDatabase = {
     authSource: 'admin',
     useUnifiedTopology: true,
   },
-  mongoURI: process.env.DATABASE_URI ? process.env.DATABASE_URI : '',
+  mongoURI: process.env.DATABASE_URI ? process.env.DATABASE_URI : 'mongodb://test:test@127.0.0.1:27017/test?authSource=admin&readPreference=primary&ssl=false',
 };
 
 export default configDatabase;

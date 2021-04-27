@@ -7,11 +7,9 @@
 /* eslint-disable import/prefer-default-export */
 import mongoose from 'mongoose';
 import { MTraceability } from '../model/traceability.interface';
-// import Traceability from '../../../index';
+import Traceability from '../../../index';
 
-import plugin from '../../../mongoose.plugin';
-
-// const { Logger, ContextAsyncHooks } = Traceability;
+const { Logger, ContextAsyncHooks } = Traceability;
 
 const TraceabilitySchema = new mongoose.Schema<MTraceability>(
   {
@@ -44,16 +42,18 @@ const TraceabilitySchema = new mongoose.Schema<MTraceability>(
   { collection: 'Traceability', versionKey: false },
 );
 
-TraceabilitySchema.method('setContext', function (context) {
-  this.context = context;
-  // ContextAsyncHooks.setContext(context);
-  console.info('PEGOU O CONTEXTO? ');
+TraceabilitySchema.pre('save', function(next) {
+  const context = ContextAsyncHooks.getContext();
+  console.info({context})
+  Logger.info('Has This log a trackId in PRE SAVE? ');
+  next();
 });
-// TraceabilitySchema.method('cria', function (data) {
-//   this.context = data;
-//   this.create(data);
-//   Logger.info('CRIOU? ');
-// });
-console.info('teest');
-// TraceabilitySchema.plugin(plugin, Traceability.ContextAsyncHooks);
+
+TraceabilitySchema.post('save', function(doc) {
+  const context = ContextAsyncHooks.getContext();
+  console.info({context})
+  Logger.info('Has This log a trackId in POST SAVE? ');
+});
+
+
 export default TraceabilitySchema;
