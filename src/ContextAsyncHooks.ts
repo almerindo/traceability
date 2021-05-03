@@ -15,7 +15,7 @@ export class ContextAsyncHooks {
 
   public asyncLocalStorage: AsyncLocalStorage<any>;
 
-  constructor() {
+  private constructor() {
     this.asyncLocalStorage = new AsyncLocalStorage<any>();
   }
 
