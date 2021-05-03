@@ -22,7 +22,7 @@ export class ContextAsyncHooks {
 
   public trackKey:ETrackKey = ETrackKey.trackId 
 
-  constructor() {
+  private constructor() {
     this.asyncLocalStorage = new AsyncLocalStorage<any>();
   }
 

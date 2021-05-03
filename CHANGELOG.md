@@ -1,3 +1,10 @@
+## [1.3.1](https://github.com/almerindo/traceability/compare/v1.3.0...v1.3.1) (2021-05-03)
+
+
+### Bug Fixes
+
+* fixes the visibility of constructor from public to private ([32ef2ef](https://github.com/almerindo/traceability/commit/32ef2ef62dfb6aa5e4bd0c6ed8b4a9270d63e10c)), closes [#1](https://github.com/almerindo/traceability/issues/1)
+
 # [1.3.0](https://github.com/almerindo/traceability/compare/v1.2.0...v1.3.0) (2021-04-14)
 
 
