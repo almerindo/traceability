@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
 
-import ContextAsyncHooks from '../ContextAsyncHooks';
-import Logger from '../LoggerTraceability';
+import traceability from '../index';
+const {Logger,ContextAsyncHooks} = traceability
 
 describe('AsyncHooks Context', () => {
   ContextAsyncHooks.setContext({ trackId: '1234567890', parent: 'alm' });
