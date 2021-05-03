@@ -19,8 +19,8 @@ class LoggerTraceability {
 
   private traceFormat = format((info: TransformableInfo) => {
     const requestInfo = ContextAsyncHooks.getContext();
-    if (requestInfo && requestInfo.trackId) {
-      info.trackId = requestInfo.trackId;
+    if (requestInfo && requestInfo[ContextAsyncHooks.trackKey]) {
+      info[ContextAsyncHooks.trackKey] = requestInfo[ContextAsyncHooks.trackKey];
     }
     return info;
   });

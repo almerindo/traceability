@@ -1,3 +1,4 @@
+import { ETrackKey } from '../ContextAsyncHooks';
 import traceability from '../index';
 
 export const level2 = (): void => {
@@ -10,8 +11,9 @@ export const level1 = (): void => {
 };
 
 export const levelRoot = (): void => {
-  const { trackId } = traceability.ContextAsyncHooks.getTrackId({});
-  traceability.ContextAsyncHooks.setContext({ trackId });
+  traceability.ContextAsyncHooks.trackKey = ETrackKey['X-Correlation-ID']
+  const context = traceability.ContextAsyncHooks.getTrackId({});
+  traceability.ContextAsyncHooks.setContext(context);
   traceability.Logger.info('levelRoot');
   level1();
 };
