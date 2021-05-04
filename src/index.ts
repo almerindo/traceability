@@ -1,7 +1,8 @@
-import ContextAsyncHooks from './ContextAsyncHooks';
+import ContextAsyncHooks, { ETrackKey } from './ContextAsyncHooks';
 import Logger from './LoggerTraceability';
 
 export default {
   ContextAsyncHooks,
   Logger,
+  ETrackKey,
 };
