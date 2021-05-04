@@ -11,7 +11,7 @@ export const level1 = (): void => {
 };
 
 export const levelRoot = (): void => {
-  traceability.ContextAsyncHooks.trackKey = ETrackKey['X-Correlation-ID']
+  traceability.ContextAsyncHooks.trackKey = ETrackKey['X-Correlation-ID'];
   const context = traceability.ContextAsyncHooks.getTrackId({});
   traceability.ContextAsyncHooks.setContext(context);
   traceability.Logger.info('levelRoot');

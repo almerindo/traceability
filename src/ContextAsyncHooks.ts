@@ -11,16 +11,16 @@ export interface RequestContext {
 }
 
 export enum ETrackKey {
-  'X-Request-ID'= 'X-Request-ID',
-  'X-Correlation-ID'= 'X-Correlation-ID',
-  'trackId'= 'trackId'
+  'X-Request-ID' = 'X-Request-ID',
+  'X-Correlation-ID' = 'X-Correlation-ID',
+  'trackId' = 'trackId',
 }
 export class ContextAsyncHooks {
   private static instance: ContextAsyncHooks;
 
   public asyncLocalStorage: AsyncLocalStorage<any>;
 
-  public trackKey:ETrackKey = ETrackKey.trackId 
+  public trackKey: ETrackKey = ETrackKey.trackId;
 
   private constructor() {
     this.asyncLocalStorage = new AsyncLocalStorage<any>();
@@ -28,7 +28,7 @@ export class ContextAsyncHooks {
 
   public getExpressMiddlewareTracking(): any {
     return (request: Request, response: Response, next: NextFunction): void => {
-      const context = Object.assign({},this.getTrackId(request.headers));
+      const context = this.getTrackId(request.headers);
       this.setContext(context);
       response.setHeader(this.trackKey, context[this.trackKey] as string);
       next();
@@ -42,10 +42,11 @@ export class ContextAsyncHooks {
   }
 
   public getTrackId(data: RequestContext): RequestContext {
-    const requestInfo = Object.assign({},this.trackKey) as any;
+    // eslint-disable-next-line prefer-object-spread
+    const requestInfo = Object.assign({}, this.trackKey) as any;
 
     if (data && data[this.trackKey])
-      requestInfo[this.trackKey]=data[this.trackKey]
+      requestInfo[this.trackKey] = data[this.trackKey];
     else {
       requestInfo[this.trackKey] = v4();
     }

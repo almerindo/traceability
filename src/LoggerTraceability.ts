@@ -20,7 +20,8 @@ class LoggerTraceability {
   private traceFormat = format((info: TransformableInfo) => {
     const requestInfo = ContextAsyncHooks.getContext();
     if (requestInfo && requestInfo[ContextAsyncHooks.trackKey]) {
-      info[ContextAsyncHooks.trackKey] = requestInfo[ContextAsyncHooks.trackKey];
+      info[ContextAsyncHooks.trackKey] =
+        requestInfo[ContextAsyncHooks.trackKey];
     }
     return info;
   });
