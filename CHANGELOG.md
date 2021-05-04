@@ -1,3 +1,15 @@
+# [1.4.0](https://github.com/almerindo/traceability/compare/v1.3.1...v1.4.0) (2021-05-04)
+
+
+### Bug Fixes
+
+* upgrade jest and fixes eslint ([bcef4d3](https://github.com/almerindo/traceability/commit/bcef4d3a3396aa7465fa9a7bc7cfb4de47a965e6))
+
+
+### Features
+
+* add request header configurable to accept the use of a standard like X-Correlation-ID or X-Request-ID ([0c950c4](https://github.com/almerindo/traceability/commit/0c950c461695586a298f82d5d5bbb598371330f6)), closes [#2](https://github.com/almerindo/traceability/issues/2)
+
 ## [1.3.1](https://github.com/almerindo/traceability/compare/v1.3.0...v1.3.1) (2021-05-03)
 
 
