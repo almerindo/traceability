@@ -1,3 +1,10 @@
+# [1.5.0](https://github.com/almerindo/traceability/compare/v1.4.0...v1.5.0) (2021-05-04)
+
+
+### Features
+
+* add export enum ETrackKey ([1149dbf](https://github.com/almerindo/traceability/commit/1149dbf2522b638df2e7ef7cb4cfd1ad5c188808))
+
 # [1.4.0](https://github.com/almerindo/traceability/compare/v1.3.1...v1.4.0) (2021-05-04)
 
 
