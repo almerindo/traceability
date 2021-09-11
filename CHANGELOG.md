@@ -1,3 +1,15 @@
+# [1.6.0](https://github.com/almerindo/traceability/compare/v1.5.0...v1.6.0) (2021-09-11)
+
+
+### Bug Fixes
+
+* **logger:** fix a method name in class LoggerTraceability. ([0e0f5ad](https://github.com/almerindo/traceability/commit/0e0f5ad051006764b03a659fb0f1ae6e8e4bf13e))
+
+
+### Features
+
+* added configuration logger wiston ([887601d](https://github.com/almerindo/traceability/commit/887601d264dcc0680ff2f27347fc96850af7a8f1))
+
 # [1.5.0](https://github.com/almerindo/traceability/compare/v1.4.0...v1.5.0) (2021-05-04)
 
 
