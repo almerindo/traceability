@@ -62,7 +62,7 @@ import traceability from 'traceability';
 
 const { ContextAsyncHooks, Logger, LoggerTraceability } = traceability;
 
-const conf = LoggerTraceability.getLoogerOptions();
+const conf = LoggerTraceability.getLoggerOptions();
 conf.silent = true;
 
 LoggerTraceability.configure(conf);

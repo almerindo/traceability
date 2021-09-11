@@ -17,7 +17,7 @@ export class LoggerTraceability {
   private logger: Logger;
 
   private constructor() {
-    this.logger = createLogger(LoggerTraceability.getLoogerOptions());
+    this.logger = createLogger(LoggerTraceability.getLoggerOptions());
   }
 
   public static getInstance(): LoggerTraceability {
@@ -31,7 +31,7 @@ export class LoggerTraceability {
     LoggerTraceability.getInstance().getLogger().configure(options);
   }
 
-  public static getLoogerOptions(): LoggerOptions {
+  public static getLoggerOptions(): LoggerOptions {
     const traceFormat = format((info: TransformableInfo) => {
       const requestInfo = ContextAsyncHooks.getContext();
       if (requestInfo && requestInfo[ContextAsyncHooks.trackKey]) {

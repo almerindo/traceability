@@ -5,7 +5,7 @@ describe('LoggerTraceability', () => {
     expect(Logger.level).toBe('info');
     expect(Logger.silent).toBeFalsy();
 
-    const conf = LoggerTraceability.getLoogerOptions();
+    const conf = LoggerTraceability.getLoggerOptions();
     conf.level = 'error';
     conf.silent = true;
 
