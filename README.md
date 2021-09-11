@@ -56,6 +56,19 @@ levelRoot();
 ```
 > **NOTE:** We can observe the same trackId value for all output messages.
 
+## Changing the wiston configuration
+```js
+import traceability from 'traceability';
+
+const { ContextAsyncHooks, Logger, LoggerTraceability } = traceability;
+
+const conf = LoggerTraceability.getLoggerOptions();
+conf.silent = true;
+
+LoggerTraceability.configure(conf);
+
+Logger.info('levelRoot');
+```
 
 ## Using as a Express middleware
 > **File** express.js (see examples directory)
@@ -113,7 +126,7 @@ Date: Mon, 03 May 2021 17:00:06 GMT
 Connection: keep-alive
 Keep-Alive: timeout=5
 
-Hello World!% 
+Hello World!%
 ```
 
 **On ServerSide**:
