@@ -156,6 +156,21 @@ async function bootstrap() {
 bootstrap();
 ```
 
+## Using methods from winston
+
+Just destructure the necessary methods directly from traceability
+
+```js
+import traceability from 'traceability';
+
+const {
+  format,
+  addColors,
+} = traceability;
+
+```
+
+``format`` and ``addColors`` comes from winston
 # Known issues
 
  ## TypeError: async_hooks_1.AsyncLocalStorage is not a constructor:
