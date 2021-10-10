@@ -1,3 +1,10 @@
+# [1.7.0](https://github.com/almerindo/traceability/compare/v1.6.0...v1.7.0) (2021-10-10)
+
+
+### Features
+
+* added all modules from winston exported by traceability ([6152971](https://github.com/almerindo/traceability/commit/6152971d031286018f8e2f34fc8a2f9453ecf153))
+
 # [1.6.0](https://github.com/almerindo/traceability/compare/v1.5.0...v1.6.0) (2021-09-11)
 
 
