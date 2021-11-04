@@ -8,7 +8,6 @@
 
 # Install
 
-
 > **NOTE** This lib needs to run on `version >= 14.0.0` of Nodejs
 
 ### Using Yarn
