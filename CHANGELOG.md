@@ -1,3 +1,15 @@
+# [1.8.0](https://github.com/almerindo/traceability/compare/v1.7.0...v1.8.0) (2021-11-04)
+
+
+### Bug Fixes
+
+* fix example levels to export barrel ([269354c](https://github.com/almerindo/traceability/commit/269354c2f0468f2644d35deb2784160d5cd9308c))
+
+
+### Features
+
+* changing export modules to barrel ([d8095da](https://github.com/almerindo/traceability/commit/d8095daff26478aa966f335a4a067e0f08ea8672))
+
 # [1.7.0](https://github.com/almerindo/traceability/compare/v1.6.0...v1.7.0) (2021-10-10)
 
 
