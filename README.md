@@ -10,7 +10,7 @@
 
 
 > **NOTE** This lib needs to run on `version >= 14.0.0` of Nodejs
-
+> After the veersion 1.7 there is a BREAKING CHANGE!
 ### Using Yarn
 ```
 yarn install traceability
