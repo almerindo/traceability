@@ -1,4 +1,4 @@
-import Logger, { LoggerTraceability } from '../LoggerTraceability';
+import { Logger, LoggerTraceability } from '../index';
 
 describe('LoggerTraceability', () => {
   it('Should update a LoggerOptions', () => {
