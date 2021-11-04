@@ -1,14 +1,12 @@
 import express from 'express';
-import { ETrackKey } from '../ContextAsyncHooks';
-import traceability from '../index';
-
-const {
-  ContextAsyncHooks,
+import {
   Logger,
+  ContextAsyncHooks,
   LoggerTraceability,
   format,
   addColors,
-} = traceability;
+  ETrackKey,
+} from '../index';
 
 const colors = {
   info: 'green',

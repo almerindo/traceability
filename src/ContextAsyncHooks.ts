@@ -15,8 +15,8 @@ export enum ETrackKey {
   'X-Correlation-ID' = 'X-Correlation-ID',
   'trackId' = 'trackId',
 }
-export class ContextAsyncHooks {
-  private static instance: ContextAsyncHooks;
+class ContextAsyncHooksClass {
+  private static instance: ContextAsyncHooksClass;
 
   public asyncLocalStorage: AsyncLocalStorage<any>;
 
@@ -58,12 +58,12 @@ export class ContextAsyncHooks {
     return this.asyncLocalStorage.getStore();
   }
 
-  public static getInstance(): ContextAsyncHooks {
-    if (!ContextAsyncHooks.instance) {
-      ContextAsyncHooks.instance = new ContextAsyncHooks();
+  public static getInstance(): ContextAsyncHooksClass {
+    if (!ContextAsyncHooksClass.instance) {
+      ContextAsyncHooksClass.instance = new ContextAsyncHooksClass();
     }
-    return ContextAsyncHooks.instance;
+    return ContextAsyncHooksClass.instance;
   }
 }
 
-export default ContextAsyncHooks.getInstance();
+export const ContextAsyncHooks = ContextAsyncHooksClass.getInstance();

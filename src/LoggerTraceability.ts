@@ -1,15 +1,15 @@
 /* eslint-disable class-methods-use-this */
 /* eslint-disable no-param-reassign */
+import { Logger } from 'winston';
+
+import { TransformableInfo } from 'logform';
 import {
   createLogger,
   format,
-  Logger,
+  ContextAsyncHooks,
   LoggerOptions,
   transports,
-} from 'winston';
-
-import { TransformableInfo } from 'logform';
-import ContextAsyncHooks from './ContextAsyncHooks';
+} from './index';
 
 export class LoggerTraceability {
   private static instance: LoggerTraceability;
@@ -53,5 +53,3 @@ export class LoggerTraceability {
     return this.logger;
   }
 }
-
-export default LoggerTraceability.getInstance().getLogger();

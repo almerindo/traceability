@@ -8,7 +8,6 @@
 
 # Install
 
-
 > **NOTE** This lib needs to run on `version >= 14.0.0` of Nodejs
 
 ### Using Yarn
@@ -26,7 +25,7 @@ npm install traceability
 ## Logging the trackId in all methods
 > **File:** index.js
 ```js
-import traceability from 'traceability'
+import * as traceability from 'traceability'
 
 
 const levelRoot = () =>{
@@ -58,9 +57,8 @@ levelRoot();
 
 ## Changing the wiston configuration
 ```js
-import traceability from 'traceability';
+import { ContextAsyncHooks, Logger, LoggerTraceability } from 'traceability';
 
-const { ContextAsyncHooks, Logger, LoggerTraceability } = traceability;
 
 const conf = LoggerTraceability.getLoggerOptions();
 conf.silent = true;
@@ -74,9 +72,8 @@ Logger.info('levelRoot');
 > **File** express.js (see examples directory)
 ```js
 import express from 'express';
-import traceability from 'traceability';
+import { ContextAsyncHooks, Logger } from 'traceability';
 
-const { ContextAsyncHooks, Logger } = traceability;
 
 const app = express();
 const port = 3000;
@@ -161,16 +158,12 @@ bootstrap();
 Just destructure the necessary methods directly from traceability
 
 ```js
-import traceability from 'traceability';
-
-const {
-  format,
-  addColors,
-} = traceability;
+import {format, addColors} from 'traceability';
 
 ```
 
 ``format`` and ``addColors`` comes from winston
+
 # Known issues
 
  ## TypeError: async_hooks_1.AsyncLocalStorage is not a constructor:
