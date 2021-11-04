@@ -1,3 +1,19 @@
+# [2.0.0](https://github.com/almerindo/traceability/compare/v1.8.0...v2.0.0) (2021-11-04)
+
+
+* Merge pull request #17 from almerindo/main-backup ([4b84cfd](https://github.com/almerindo/traceability/commit/4b84cfd900423edfea227d48ea959975c78721c3)), closes [#17](https://github.com/almerindo/traceability/issues/17)
+
+
+### Features
+
+* add barrel imports ([5e11203](https://github.com/almerindo/traceability/commit/5e11203cd079710dece0755b1833b1a978bdcde1))
+
+
+### BREAKING CHANGES
+
+* add barreel import
+* this commit is a breaking change. it changes the imports to barree.
+
 # [1.8.0](https://github.com/almerindo/traceability/compare/v1.7.0...v1.8.0) (2021-11-04)
 
 
