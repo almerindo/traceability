@@ -1,3 +1,15 @@
+# [3.0.0](https://github.com/almerindo/traceability/compare/v2.0.0...v3.0.0) (2021-11-04)
+
+
+### Features
+
+* add barrel imports ([1001d08](https://github.com/almerindo/traceability/commit/1001d0897688ed7118370a86487fb42cfbf7853d))
+
+
+### BREAKING CHANGES
+
+* this cocmmit is a braking change
+
 # [2.0.0](https://github.com/almerindo/traceability/compare/v1.8.0...v2.0.0) (2021-11-04)
 
 
