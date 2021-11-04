@@ -1,8 +1,5 @@
 import express from 'express';
-import { ETrackKey } from '../ContextAsyncHooks';
-import traceability from '../index';
-
-const { ContextAsyncHooks, Logger } = traceability;
+import { ContextAsyncHooks, Logger, ETrackKey } from '../index';
 
 const app = express();
 const port = 3000;
