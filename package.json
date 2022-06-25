@@ -48,7 +48,7 @@
     "prettier": "^2.0.5",
     "replace-json-property": "^1.6.3",
     "rimraf": "^3.0.2",
-    "semantic-release": "^17.0.7",
+    "semantic-release": "^19.0.3",
     "ts-jest": "^26.5.5",
     "ts-node-dev": "^1.0.0-pre.44",
     "typescript": "^3.8.3"
