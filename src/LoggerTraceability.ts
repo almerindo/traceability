@@ -43,12 +43,7 @@ export class LoggerTraceability {
     return {
       level: 'info',
       silent: false,
-      format: format.combine(
-        format.colorize(),
-        traceFormat(),
-        format.timestamp(),
-        format.json(),
-      ),
+      format: format.combine(traceFormat(), format.timestamp(), format.json()),
       transports: [new transports.Console()],
     };
   }
