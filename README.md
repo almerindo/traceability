@@ -29,9 +29,8 @@ import * as traceability from 'traceability'
 
 
 const levelRoot = () =>{
-  traceability.ContextAsyncHooks.trackKey = ETrackKey['X-Correlation-ID']
-  const {trackId} = traceability.ContextAsyncHooks.getTrackId({})
-  traceability.ContextAsyncHooks.setContext({trackId})
+  const {cid} = traceability.ContextAsyncHooks.getTrackId({})
+  traceability.ContextAsyncHooks.setContext({cid})
   traceability.Logger.info('levelRoot');
   level1()
 
@@ -49,9 +48,9 @@ levelRoot();
 ```
 ### Output
 ```
-{"message":"levelRoot","level":"info","X-Correlation-ID":"6b1552d0-0db5-4d7d-8551-567847703fa6","timestamp":"2021-05-03T16:21:01.523Z"}
-{"message":"level1","level":"info","X-Correlation-ID":"6b1552d0-0db5-4d7d-8551-567847703fa6","timestamp":"2021-05-03T16:21:01.525Z"}
-{"message":"level2","level":"info","X-Correlation-ID":"6b1552d0-0db5-4d7d-8551-567847703fa6","timestamp":"2021-05-03T16:21:01.525Z"}
+{"message":"levelRoot","level":"info","cid":"6b1552d0-0db5-4d7d-8551-567847703fa6","timestamp":"2021-05-03T16:21:01.523Z"}
+{"message":"level1","level":"info","cid":"6b1552d0-0db5-4d7d-8551-567847703fa6","timestamp":"2021-05-03T16:21:01.525Z"}
+{"message":"level2","level":"info","cid":"6b1552d0-0db5-4d7d-8551-567847703fa6","timestamp":"2021-05-03T16:21:01.525Z"}
 ```
 > **NOTE:** We can observe the same trackId value for all output messages.
 
@@ -78,7 +77,7 @@ import { ContextAsyncHooks, Logger } from 'traceability';
 const app = express();
 const port = 3000;
 
-ContextAsyncHooks.trackKey= ETrackKey['X-Correlation-ID']
+ContextAsyncHooks.trackKey= ETrackKey['cid']
 
 app.use(ContextAsyncHooks.getExpressMiddlewareTracking());
 app.get('/', (req, res) => {
@@ -115,7 +114,7 @@ The output will look something like:
 ```
 HTTP/1.1 200 OK
 X-Powered-By: Express
-X-Correlation-ID: 79a0e7f2-3e02-49aa-9368-582b9cce6002
+cid: 79a0e7f2-3e02-49aa-9368-582b9cce6002
 Content-Type: text/html; charset=utf-8
 Content-Length: 12
 ETag: W/"c-Lve95gjOVATpfV8EL5X4nxwjKHE"
@@ -128,10 +127,10 @@ Hello World!%
 
 **On ServerSide**:
 ```
-{"message":"Hello World with trackId on server side!","level":"info","X-Correlation-ID":"6ecf583a-7509-4ce3-baef-1fcbe94adc5c","timestamp":"2021-05-03T16:57:32.116Z"}
+{"message":"Hello World with trackId on server side!","level":"info","cid":"6ecf583a-7509-4ce3-baef-1fcbe94adc5c","timestamp":"2021-05-03T16:57:32.116Z"}
 ```
 ---
-> **NOTE:** At the momennt, we can compare the X-Correlation-ID values printed onn server side and on client side.
+> **NOTE:** At the momennt, we can compare the cid values printed onn server side and on client side.
 
 ## Using as a Nest middleware - Global Middleware
 
