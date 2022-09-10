@@ -1,3 +1,10 @@
+## [3.0.4](https://github.com/almerindo/traceability/compare/v3.0.3...v3.0.4) (2022-09-10)
+
+
+### Bug Fixes
+
+* returning to json format ([3d2180e](https://github.com/almerindo/traceability/commit/3d2180e6ce108adc3432e76f0bfd20f145831a0c))
+
 ## [3.0.3](https://github.com/almerindo/traceability/compare/v3.0.2...v3.0.3) (2022-09-10)
 
 
