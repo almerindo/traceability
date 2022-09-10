@@ -18,7 +18,7 @@
       - yarn test
 
   - name: build-upload-npm
-    image: node:14.16.1
+    image: node:16.16.0
     environment:
       NPM_TOKEN:
         from_secret: NPM_TOKEN
