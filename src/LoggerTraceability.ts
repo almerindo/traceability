@@ -34,9 +34,8 @@ export class LoggerTraceability {
   public static getLoggerOptions(): LoggerOptions {
     const traceFormat = format((info: TransformableInfo) => {
       const requestInfo = ContextAsyncHooks.getContext();
-      if (requestInfo && requestInfo[ContextAsyncHooks.trackKey]) {
-        info[ContextAsyncHooks.trackKey] =
-          requestInfo[ContextAsyncHooks.trackKey];
+      if (requestInfo && requestInfo.cid) {
+        info.cid = requestInfo.cid;
       }
       return info;
     });

@@ -9,18 +9,10 @@ import { AsyncLocalStorage } from 'async_hooks';
 export interface RequestContext {
   [key: string]: string | string[] | undefined;
 }
-
-export enum ETrackKey {
-  'X-Request-ID' = 'X-Request-ID',
-  'X-Correlation-ID' = 'X-Correlation-ID',
-  'trackId' = 'trackId',
-}
 class ContextAsyncHooksClass {
   private static instance: ContextAsyncHooksClass;
 
   public asyncLocalStorage: AsyncLocalStorage<any>;
-
-  public trackKey: ETrackKey = ETrackKey.trackId;
 
   private constructor() {
     this.asyncLocalStorage = new AsyncLocalStorage<any>();
@@ -28,9 +20,10 @@ class ContextAsyncHooksClass {
 
   public getExpressMiddlewareTracking(): any {
     return (request: Request, response: Response, next: NextFunction): void => {
-      const context = this.getTrackId(request.headers);
-      this.setContext(context);
-      response.setHeader(this.trackKey, context[this.trackKey] as string);
+      const { cid } = this.getTrackId(request.headers);
+      console.info({ cid });
+      this.setContext({ cid });
+      response.setHeader('cid', cid as string);
       next();
     };
   }
@@ -42,13 +35,12 @@ class ContextAsyncHooksClass {
   }
 
   public getTrackId(data: RequestContext): RequestContext {
-    // eslint-disable-next-line prefer-object-spread
-    const requestInfo = Object.assign({}, this.trackKey) as any;
-
-    if (data && data[this.trackKey])
-      requestInfo[this.trackKey] = data[this.trackKey];
-    else {
-      requestInfo[this.trackKey] = v4();
+    let requestInfo;
+    console.info({ data });
+    if (!data) {
+      requestInfo = { cid: v4() };
+    } else {
+      requestInfo = data.cid ? { cid: data.cid } : { cid: v4() };
     }
 
     return requestInfo;
