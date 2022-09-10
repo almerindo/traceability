@@ -1,3 +1,13 @@
+## [3.0.1](https://github.com/almerindo/traceability/compare/v3.0.0...v3.0.1) (2022-09-10)
+
+
+### Bug Fixes
+
+* fix the express middleware ([2fe05e7](https://github.com/almerindo/traceability/commit/2fe05e7985060bb74c0b9b0f5012274ca6f5b830))
+* fixes ci/cd ([4406150](https://github.com/almerindo/traceability/commit/4406150449123aa7c2435dec3575da17e9c9b2e4))
+* fixes the readme ([21907dc](https://github.com/almerindo/traceability/commit/21907dc73fcfbdcb9dbb65b6a6964e900c396574))
+* fixes the readme ([ee091b5](https://github.com/almerindo/traceability/commit/ee091b5e604aef7f5f6ef2a519541f66bb16514c))
+
 # [3.0.0](https://github.com/almerindo/traceability/compare/v2.0.0...v3.0.0) (2021-11-04)
 
 
