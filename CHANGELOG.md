@@ -1,3 +1,10 @@
+## [3.0.3](https://github.com/almerindo/traceability/compare/v3.0.2...v3.0.3) (2022-09-10)
+
+
+### Bug Fixes
+
+* remove allcolors ([2341b35](https://github.com/almerindo/traceability/commit/2341b35fcf9344b5e880b4c4f957b33906b0bac9))
+
 ## [3.0.2](https://github.com/almerindo/traceability/compare/v3.0.1...v3.0.2) (2022-09-10)
 
 
