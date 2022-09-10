@@ -44,7 +44,7 @@ export class LoggerTraceability {
       level: 'info',
       silent: false,
       format: format.combine(
-        format.colorize({ all: true }),
+        format.colorize(),
         traceFormat(),
         format.timestamp(),
         format.simple(),
