@@ -4,11 +4,11 @@ export const loggerConfiguration = LoggerTraceability.getLoggerOptions();
 LoggerTraceability.configure(loggerConfiguration);
 
 export const level2 = (): void => {
-  Logger.info('level2');
+  Logger.error('level2');
 };
 
 export const level1 = (): void => {
-  Logger.info('level1');
+  Logger.warn('level1');
   level2();
 };
 
