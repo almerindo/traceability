@@ -1,3 +1,10 @@
+## [3.0.5](https://github.com/almerindo/traceability/compare/v3.0.4...v3.0.5) (2022-09-10)
+
+
+### Bug Fixes
+
+* removing colorize from log format ([12c1d9a](https://github.com/almerindo/traceability/commit/12c1d9ae84467a5817085589e4a3ab043b747f47))
+
 ## [3.0.4](https://github.com/almerindo/traceability/compare/v3.0.3...v3.0.4) (2022-09-10)
 
 
