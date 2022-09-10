@@ -47,7 +47,7 @@ export class LoggerTraceability {
         format.colorize(),
         traceFormat(),
         format.timestamp(),
-        format.simple(),
+        format.json(),
       ),
       transports: [new transports.Console()],
     };
