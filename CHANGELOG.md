@@ -1,3 +1,10 @@
+## [3.0.2](https://github.com/almerindo/traceability/compare/v3.0.1...v3.0.2) (2022-09-10)
+
+
+### Bug Fixes
+
+* add colorize ([a2da082](https://github.com/almerindo/traceability/commit/a2da082bcae1a90e237f7d8cc1cd773f279744c8))
+
 ## [3.0.1](https://github.com/almerindo/traceability/compare/v3.0.0...v3.0.1) (2022-09-10)
 
 
