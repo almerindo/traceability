@@ -13,7 +13,6 @@ export const level1 = (): void => {
 };
 
 export const levelRoot = (): void => {
-  // ContextAsyncHooks.trackKey = ETrackKey['X-Correlation-ID'];
   const context = ContextAsyncHooks.getTrackId({});
   ContextAsyncHooks.setContext(context);
   Logger.info('levelRoot');
