@@ -108,7 +108,7 @@ curl -i http://localhost:3000
 ```
 > -i option will show you the header.
 ---
-The output will look something like:
+The `output` will look something like:
 
 **On ClientSide:**
 ```
