@@ -1,9 +1,9 @@
 import express from 'express';
-import { ContextAsyncHooks, Logger, ETrackKey } from '../index';
+import { ContextAsyncHooks, Logger } from '../index';
 
 const app = express();
 const port = 3000;
-ContextAsyncHooks.trackKey = ETrackKey['X-Correlation-ID'];
+
 app.use(ContextAsyncHooks.getExpressMiddlewareTracking());
 app.get('/', (req, res) => {
   Logger.info('Hello World with trackId on server side!');
