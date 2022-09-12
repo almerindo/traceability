@@ -1,3 +1,10 @@
+## [3.0.6](https://github.com/almerindo/traceability/compare/v3.0.5...v3.0.6) (2022-09-12)
+
+
+### Bug Fixes
+
+* Merge pull request [#25](https://github.com/almerindo/traceability/issues/25) from almerindo/dependabot/npm_and_yarn/ansi-regex-4.1.1 ([f677b1f](https://github.com/almerindo/traceability/commit/f677b1fff587023b5726369d80d532ea89bb64e9))
+
 ## [3.0.5](https://github.com/almerindo/traceability/compare/v3.0.4...v3.0.5) (2022-09-10)
 
 
