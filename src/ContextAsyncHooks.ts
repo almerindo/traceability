@@ -21,7 +21,6 @@ class ContextAsyncHooksClass {
   public getExpressMiddlewareTracking(): any {
     return (request: Request, response: Response, next: NextFunction): void => {
       const { cid } = this.getTrackId(request.headers);
-      console.info({ cid });
       this.setContext({ cid });
       response.setHeader('cid', cid as string);
       next();
@@ -36,7 +35,6 @@ class ContextAsyncHooksClass {
 
   public getTrackId(data: RequestContext): RequestContext {
     let requestInfo;
-    console.info({ data });
     if (!data) {
       requestInfo = { cid: v4() };
     } else {
