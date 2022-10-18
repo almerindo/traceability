@@ -33,15 +33,13 @@ class ContextAsyncHooksClass {
     this.asyncLocalStorage.enterWith(oldData);
   }
 
-  public getTrackId(data: RequestContext): RequestContext {
-    let requestInfo;
-    if (!data) {
-      requestInfo = { cid: v4() };
-    } else {
-      requestInfo = data.cid ? { cid: data.cid } : { cid: v4() };
-    }
+  public getTrackId(contextParam: RequestContext): RequestContext {
+    const context =  contextParam ? contextParam : this.getContext()
 
-    return requestInfo;
+    if (context && context.cid) {
+      return { cid: context.cid }
+    }
+    return { cid: v4() };
   }
 
   public getContext(): RequestContext | undefined {
