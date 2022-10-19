@@ -1,3 +1,10 @@
+# [3.1.0](https://github.com/almerindo/traceability/compare/v3.0.6...v3.1.0) (2022-10-18)
+
+
+### Features
+
+* add get default context on get trackId ([de1a3b5](https://github.com/almerindo/traceability/commit/de1a3b5aa4fd1f0677490934b9776de1c37575b4))
+
 ## [3.0.6](https://github.com/almerindo/traceability/compare/v3.0.5...v3.0.6) (2022-09-12)
 
 
