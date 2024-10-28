@@ -1,3 +1,10 @@
+## [3.1.1](https://github.com/almerindo/traceability/compare/v3.1.0...v3.1.1) (2022-10-19)
+
+
+### Bug Fixes
+
+* turn param option on getTrackId ([aa50627](https://github.com/almerindo/traceability/commit/aa50627ec04aba079fc8fe513fa12ff2d9aecb99))
+
 # [3.1.0](https://github.com/almerindo/traceability/compare/v3.0.6...v3.1.0) (2022-10-18)
 
 
