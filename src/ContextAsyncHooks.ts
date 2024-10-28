@@ -3,8 +3,8 @@
 /* eslint-disable no-console */
 /* eslint-disable class-methods-use-this */
 import { NextFunction, Request, Response } from 'express';
-import { v4 } from 'uuid';
 import { AsyncLocalStorage } from 'async_hooks';
+import { RandomIdGenerator } from './idGenerator';
 
 export interface RequestContext {
   [key: string]: string | string[] | undefined;
@@ -39,7 +39,7 @@ class ContextAsyncHooksClass {
     if (context && context.cid) {
       return { cid: context.cid };
     }
-    return { cid: v4() };
+    return { cid: RandomIdGenerator.generateTraceId() };
   }
 
   public getContext(): RequestContext | undefined {

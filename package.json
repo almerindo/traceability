@@ -60,7 +60,6 @@
     "@types/node": "^13.13.2",
     "express": "^4.17.1",
     "logform": "^2.2.0",
-    "uuid": "^8.3.2",
     "winston": "^3.3.3"
   },
   "scripts": {
