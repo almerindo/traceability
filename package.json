@@ -69,6 +69,7 @@
     "test": "jest --runInBand --detectOpenHandles --no-cache ---coverage",
     "lint": "eslint . --ext .ts,.tsx",
     "example:express": "DEBUG=express:*  yarn ts-node src/examples/express.ts",
+    "example:express-traceparent": "DEBUG=express:*  yarn ts-node src/examples/express-traceparent.ts",
     "example:express-personalized": "yarn ts-node src/examples/express-with-config.ts"
   }
 }
