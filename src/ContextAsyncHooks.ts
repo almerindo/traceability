@@ -58,6 +58,11 @@ class ContextAsyncHooksClass {
     return { cid: RandomIdGenerator.generateTraceId() };
   }
 
+  public getTraceParent(): string {
+    const { cid } = this.getTrackId();
+    return this.buildTraceParent(cid as string);
+  }
+
   private getTraceIdFromTraceParent(traceParent: string): string {
     const traceId = traceParent.split('-')[1];
 
