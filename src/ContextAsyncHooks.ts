@@ -3,8 +3,8 @@
 /* eslint-disable no-console */
 /* eslint-disable class-methods-use-this */
 import { NextFunction, Request, Response } from 'express';
-import { v4 } from 'uuid';
 import { AsyncLocalStorage } from 'async_hooks';
+import { RandomIdGenerator } from './idGenerator';
 
 export interface RequestContext {
   [key: string]: string | string[] | undefined;
@@ -18,12 +18,21 @@ class ContextAsyncHooksClass {
     this.asyncLocalStorage = new AsyncLocalStorage<any>();
   }
 
-  public getExpressMiddlewareTracking(): any {
+  public getExpressMiddlewareTracking(config?: {
+    responseHeaderPropagator?: 'cid' | 'traceparent';
+  }): any {
     return (request: Request, response: Response, next: NextFunction): void => {
       const { cid } = this.getTrackId(request.headers);
       this.setContext({ cid });
-      response.setHeader('cid', cid as string);
-      next();
+      if (!config || config.responseHeaderPropagator === 'cid') {
+        response.setHeader('cid', cid as string);
+        next();
+      }
+      if (config?.responseHeaderPropagator === 'traceparent') {
+        const traceparent = this.buildTraceParent(cid as string);
+        response.setHeader('traceparent', traceparent);
+        next();
+      }
     };
   }
 
@@ -39,7 +48,30 @@ class ContextAsyncHooksClass {
     if (context && context.cid) {
       return { cid: context.cid };
     }
-    return { cid: v4() };
+    if (
+      context &&
+      context.traceparent &&
+      typeof context.traceparent === 'string'
+    ) {
+      return { cid: this.getTraceIdFromTraceParent(context.traceparent) };
+    }
+    return { cid: RandomIdGenerator.generateTraceId() };
+  }
+
+  public getTraceParent(): string {
+    const { cid } = this.getTrackId();
+    return this.buildTraceParent(cid as string);
+  }
+
+  private getTraceIdFromTraceParent(traceParent: string): string {
+    const traceId = traceParent.split('-')[1];
+
+    return traceId;
+  }
+
+  private buildTraceParent(traceId: string): string {
+    const spanId = RandomIdGenerator.generateSpanId();
+    return `00-${traceId}-${spanId}-01`;
   }
 
   public getContext(): RequestContext | undefined {

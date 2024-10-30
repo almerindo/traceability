@@ -91,6 +91,34 @@ app.listen(port, () => {
 });
 ```
 
+
+## Using as a Express middleware with traceparent propagator
+> **File** express-traceparent.ts (see examples directory)
+```js
+import express from 'express';
+import { ContextAsyncHooks, Logger } from 'traceability';
+
+
+const app = express();
+const port = 3000;
+
+ContextAsyncHooks.trackKey= ETrackKey['cid']
+
+app.use(ContextAsyncHooks.getExpressMiddlewareTracking({
+  responseHeaderPropagator: 'traceparent'
+}));
+app.get('/', (req, res) => {
+  Logger.info('Hello World with trackId on server side!');
+  res.send('Hello World!');
+});
+
+app.listen(port, () => {
+  Logger.info(`Example app listening at http://localhost:${port}`);
+});
+```
+> When traceparent is enabled, the library will automatically generate and propagate the traceparent header in all outgoing requests, following the W3C Trace Context format:
+`traceparent: 00-<trace-id>-<span-id>-<trace-flags>`
+
 ### Running the code:
 ```
 yarn ts-node ./express.ts
