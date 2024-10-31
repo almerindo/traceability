@@ -1,3 +1,10 @@
+## [3.2.2](https://github.com/almerindo/traceability/compare/v3.2.1...v3.2.2) (2024-10-31)
+
+
+### Bug Fixes
+
+* removing drone-ci ([87f29ac](https://github.com/almerindo/traceability/commit/87f29acb7abc42d903b99b12e6def486181ce545))
+
 ## [3.2.1](https://github.com/almerindo/traceability/compare/v3.2.0...v3.2.1) (2024-10-31)
 
 
