@@ -1,3 +1,10 @@
+## [3.2.1](https://github.com/almerindo/traceability/compare/v3.2.0...v3.2.1) (2024-10-31)
+
+
+### Bug Fixes
+
+* ci-cd ([63fa452](https://github.com/almerindo/traceability/commit/63fa45223cd58920d6ed4bfb016fd2a9c203346d))
+
 # [3.2.0](https://github.com/almerindo/traceability/compare/v3.1.1...v3.2.0) (2024-10-31)
 
 
