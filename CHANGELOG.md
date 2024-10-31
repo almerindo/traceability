@@ -1,3 +1,17 @@
+# [3.2.0](https://github.com/almerindo/traceability/compare/v3.1.1...v3.2.0) (2024-10-31)
+
+
+### Bug Fixes
+
+* ci-cd ([599885a](https://github.com/almerindo/traceability/commit/599885a440f0e56ed1aea1f57a1075509fd2f9d0))
+* removing token ([76168b8](https://github.com/almerindo/traceability/commit/76168b86c0afb24b01c65cc14049c2dd6d43b337))
+
+
+### Features
+
+* enable clients to getTraceParent ([b823657](https://github.com/almerindo/traceability/commit/b823657a770401d913c04e88c023cd8f07facfdb))
+* enable traceparent as a context propagator option ([fc338ff](https://github.com/almerindo/traceability/commit/fc338ff424b14d5c0e9ecb2d5f384aaa39fc0e8a))
+
 ## [3.1.1](https://github.com/almerindo/traceability/compare/v3.1.0...v3.1.1) (2022-10-19)
 
 
