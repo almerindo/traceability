@@ -14,4 +14,11 @@ describe('LoggerTraceability', () => {
     expect(Logger.level).toBe('error');
     expect(Logger.silent).toBeTruthy();
   });
+
+  it('should preserve transports if not provided', () => {
+    const initialTransports = Logger.transports.length;
+    LoggerTraceability.configure({ level: 'debug' });
+    expect(Logger.level).toBe('debug');
+    expect(Logger.transports.length).toBe(initialTransports);
+  });
 });
