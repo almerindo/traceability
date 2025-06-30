@@ -1,3 +1,10 @@
+## [3.2.3](https://github.com/almerindo/traceability/compare/v3.2.2...v3.2.3) (2025-06-30)
+
+
+### Bug Fixes
+
+* **logger:** preserve transports when configuring ([4ec8fb9](https://github.com/almerindo/traceability/commit/4ec8fb9e9f5e8e223a0f63b5302abff262a1a4f0))
+
 ## [3.2.2](https://github.com/almerindo/traceability/compare/v3.2.1...v3.2.2) (2024-10-31)
 
 
