@@ -28,7 +28,12 @@ export class LoggerTraceability {
   }
 
   public static configure(options: LoggerOptions): void {
-    LoggerTraceability.getInstance().getLogger().configure(options);
+    const logger = LoggerTraceability.getInstance().getLogger();
+    const newOptions = { ...options };
+    if (newOptions.transports === undefined) {
+      newOptions.transports = logger.transports;
+    }
+    logger.configure(newOptions);
   }
 
   public static getLoggerOptions(): LoggerOptions {
